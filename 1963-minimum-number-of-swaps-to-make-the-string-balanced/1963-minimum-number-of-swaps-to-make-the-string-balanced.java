@@ -1,0 +1,18 @@
+class Solution {
+    public int minSwaps(String s) {
+        Stack<Character> stack = new Stack();
+        int unbalanced =0;
+        for(int i=0;i<s.length();i++){
+          char ch = s.charAt(i);
+            if(s.charAt(i)=='[')
+                stack.push(ch);
+            else{
+                if(!stack.isEmpty())
+                    stack.pop();
+                else
+                    unbalanced++;
+            }
+        }
+        return (unbalanced+1)/2;
+    }
+}
