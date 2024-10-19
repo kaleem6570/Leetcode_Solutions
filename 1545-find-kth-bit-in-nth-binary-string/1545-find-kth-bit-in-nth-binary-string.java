@@ -5,7 +5,8 @@ class Solution {
         if(k<len/2) return findKthBit(n-1,  k);
         if(k==len/2)return '1';
         else{
-            return (findKthBit(n-1, len-k)=='0') ? '1':'0';
+           int correspondingbit = findKthBit(n-1, len-k);
+            return (correspondingbit=='0') ? '1':'0';
         }
     }
 }
